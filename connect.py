@@ -5,11 +5,12 @@ import mylib
 
 ##Set options
 options = settings.getOpt()
+chromedriver = "bin/chromedriver"
 
 ##Login with id and pw
 def login(id, pw):
     contact = ["NULL", "NULL", "NULL"]
-    driver = webdriver.Chrome(chrome_options=options)
+    driver = webdriver.Chrome(executable_path= chromedriver, chrome_options=options)
     driver.get("http://kimlik.ege.edu.tr")
 
     username = driver.find_element_by_id("username")
